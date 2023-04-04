@@ -97,6 +97,7 @@ cat > ${BUILD_DIR}/tor/bin/${RUN_COMMAND} <<EOF
 #!/usr/bin/env bash
 mkdir -p "${HOME}/hidden_service"
 echo "Setting up tor"
+echo "SocksPort 0.0.0.0:9050" > $HOME/tor/etc/tor/torrc
 echo "ControlPort 9051" > $HOME/tor/etc/tor/torrc
 echo "CookieAuthentication 0" >> $HOME/tor/etc/tor/torrc
 # Use -f to be safe here.
